@@ -1,0 +1,64 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "SuDungDichVuView",
+      "request": "launch",
+      "mainClass": "gui.SuDungDichVuView",
+      "projectName": "quanlykhachsan"
+    },
+    {
+      "type": "java",
+      "name": "SuDungDichVuView_v2",
+      "request": "launch",
+      "mainClass": "gui.SuDungDichVuView_v2",
+      "projectName": "quanlykhachsan",
+      "vmArgs": "--module-path \"T:/Lucia_Hotel/javafx-sdk-21.0.11/lib;${workspaceFolder}/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,atlantafx.base"
+    },
+    {
+      "type": "java",
+      "name": "TestQuanLyDV",
+      "request": "launch",
+      "mainClass": "main.TestQuanLyDV",
+      "projectName": "quanlykhachsan",
+      "vmArgs": "--module-path \"T:/Lucia_Hotel/javafx-sdk-21.0.11/lib;${workspaceFolder}/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,atlantafx.base"
+    },
+    {
+      "type": "java",
+      "name": "QuanLyDichVuView",
+      "request": "launch",
+      "mainClass": "gui.QuanLyDichVuView",
+      "projectName": "quanlykhachsan"
+    },
+    {
+      "type": "java",
+      "name": "SystemLogicTester",
+      "request": "launch",
+      "mainClass": "main.SystemLogicTester",
+      "projectName": "quanlykhachsan"
+    },
+    {
+      "type": "java",
+      "name": "LogicTest",
+      "request": "launch",
+      "mainClass": "main.LogicTest",
+      "projectName": "quanlykhachsan"
+    },
+    {
+      "type": "java",
+      "name": "SchemaFixer",
+      "request": "launch",
+      "mainClass": "main.SchemaFixer",
+      "projectName": "quanlykhachsan"
+    },
+    {
+      "type": "java",
+      "name": "Lucia Hotel (Chạy App)",
+      "request": "launch",
+      "mainClass": "main.App",
+      "projectName": "quanlykhachsan",
+      "vmArgs": "--module-path \"T:/Lucia_Hotel/javafx-sdk-21.0.11/lib;${workspaceFolder}/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,atlantafx.base"
+    }
+  ]
+}
