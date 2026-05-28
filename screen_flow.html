@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Flow – Lucia Star Hotel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #fdfaf4;
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+      letter-spacing: 0.5px;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1280px;
+      height: 620px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #d0c8b8;
+      border-radius: 12px;
+      overflow: hidden;
+      /* Grid pattern */
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .box {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 12px;
+      line-height: 1.35;
+      border-radius: 10px;
+      z-index: 2;
+      border: 2px solid #ccc;
+      background: #fff;
+      color: #333;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .box small {
+      font-size: 10.5px;
+      font-weight: 400;
+      margin-top: 3px;
+      line-height: 1.3;
+      display: block;
+    }
+
+    /* Role accent borders */
+    .b-gray {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+
+    .b-blue {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    .b-gold {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+
+    .b-purple {
+      border-color: #8b5cf6;
+      background: #f5f3ff;
+    }
+
+    /* Text colors */
+    .t-gray {
+      color: #64748b;
+    }
+
+    .t-blue {
+      color: #1d4ed8;
+    }
+
+    .t-gold {
+      color: #b45309;
+    }
+
+    .t-purple {
+      color: #6d28d9;
+    }
+
+    .t-white {
+      color: #333;
+    }
+
+    /* SVG Label Backgrounds */
+    .label-bg {
+      fill: #fff;
+      fill-opacity: 0.9;
+    }
+
+    svg.arrows {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .legend {
+      margin: 16px auto 0;
+      width: 1280px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      background: #fff;
+      border: 1px solid #d0c8b8;
+      border-radius: 10px;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      border: 2px solid;
+      display: inline-block;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🏨 Screen Flow &amp; Phân quyền – Khách sạn Lucia Star</h1>
+
+  <div class="canvas">
+    <svg class="arrows" viewBox="0 0 1280 620">
+      <defs>
+        <marker id="a-gray" markerWidth="14" markerHeight="9" refX="14" refY="4.5" orient="auto">
+          <path d="M0,0 L0,9 L14,4.5z" fill="#94a3b8" />
+        </marker>
+        <marker id="a-blue" markerWidth="14" markerHeight="9" refX="14" refY="4.5" orient="auto">
+          <path d="M0,0 L0,9 L14,4.5z" fill="#3b82f6" />
+        </marker>
+        <marker id="a-gold" markerWidth="14" markerHeight="9" refX="14" refY="4.5" orient="auto">
+          <path d="M0,0 L0,9 L14,4.5z" fill="#f59e0b" />
+        </marker>
+        <marker id="a-purple" markerWidth="14" markerHeight="9" refX="14" refY="4.5" orient="auto">
+          <path d="M0,0 L0,9 L14,4.5z" fill="#8b5cf6" />
+        </marker>
+      </defs>
+
+      <!-- LOGIN FLOW -->
+      <polyline points="145,260 145,140 220,140" fill="none" stroke="#3b82f6" stroke-width="2"
+        marker-end="url(#a-blue)" />
+      <line x1="145" y1="310" x2="220" y2="310" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-gold)" />
+      <polyline points="145,300 145,460 220,460" fill="none" stroke="#8b5cf6" stroke-width="2"
+        marker-end="url(#a-purple)" />
+
+      <rect x="148" y="193" width="60" height="16" class="label-bg" />
+      <text x="150" y="205" font-size="11" fill="#3b82f6" font-family="Segoe UI" font-weight="600">NV Login</text>
+      <text x="180" y="280" font-size="11" fill="#f59e0b" font-family="Segoe UI" font-weight="600">QL Login</text>
+      <rect x="148" y="415" width="75" height="16" class="label-bg" />
+      <text x="150" y="427" font-size="11" fill="#8b5cf6" font-family="Segoe UI" font-weight="600">Admin Login</text>
+
+      <line x1="360" y1="140" x2="380" y2="140" stroke="#3b82f6" stroke-width="2" />
+      <rect x="382" y="132" width="62" height="16" class="label-bg" />
+      <text x="384" y="144" font-size="10" fill="#3b82f6" font-family="Segoe UI">Thành công</text>
+      <polyline points="446,140 460,140 460,300 480,300" fill="none" stroke="#3b82f6" stroke-width="2"
+        marker-end="url(#a-blue)" />
+
+      <line x1="360" y1="310" x2="380" y2="310" stroke="#f59e0b" stroke-width="2" />
+      <rect x="382" y="302" width="72" height="16" class="label-bg" />
+      <text x="384" y="314" font-size="10" fill="#f59e0b" font-family="Segoe UI">Thành công ▶</text>
+      <line x1="456" y1="310" x2="480" y2="310" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-gold)" />
+
+      <line x1="360" y1="460" x2="380" y2="460" stroke="#8b5cf6" stroke-width="2" />
+      <rect x="382" y="452" width="62" height="16" class="label-bg" />
+      <text x="384" y="464" font-size="10" fill="#8b5cf6" font-family="Segoe UI">Thành công</text>
+      <polyline points="446,460 460,460 460,320 480,320" fill="none" stroke="#8b5cf6" stroke-width="2"
+        marker-end="url(#a-purple)" />
+
+      <!-- MAINFRAME -->
+      <line x1="630" y1="310" x2="650" y2="310" stroke="#94a3b8" stroke-width="2" />
+      <line x1="650" y1="80" x2="650" y2="500" stroke="#94a3b8" stroke-width="2" />
+      <!-- SHARED NODES -->
+      <line x1="650" y1="80" x2="680" y2="80" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="650" y1="180" x2="680" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="650" y1="280" x2="680" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="650" y1="380" x2="680" y2="380" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="650" y1="500" x2="680" y2="500" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+
+      <line x1="810" y1="80" x2="870" y2="80" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="810" y1="280" x2="870" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="1000" y1="280" x2="1080" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-gray)" />
+      <line x1="810" y1="500" x2="740" y2="500" stroke="#94a3b8" stroke-width="2" />
+
+      <!-- STAFF FLOW (Blue) directly from MainFrame through the spine -->
+      <polyline points="630,305 600,305 600,165 870,165" fill="none" stroke="#3b82f6" stroke-width="2"
+        marker-end="url(#a-blue)" />
+      <polyline points="600,165 600,355 1080,355" fill="none" stroke="#3b82f6" stroke-width="2"
+        marker-end="url(#a-blue)" />
+
+      <!-- QL & Admin (Yellow / Purple) -->
+      <polyline points="630,280 630,20 840,20 840,135 870,135" fill="none" stroke="#f59e0b" stroke-width="2"
+        marker-end="url(#a-gold)" />
+      <polyline points="630,340 630,580 1050,580 1050,385 1080,385" fill="none" stroke="#f59e0b" stroke-width="2"
+        marker-end="url(#a-gold)" />
+      <polyline points="610,280 610,10 820,10 820,435 870,435" fill="none" stroke="#f59e0b" stroke-width="2"
+        marker-end="url(#a-gold)" />
+      <polyline points="610,340 610,600 820,600 820,465 870,465" fill="none" stroke="#8b5cf6" stroke-width="2"
+        marker-end="url(#a-purple)" />
+
+    </svg>
+
+    <div class="box b-gray" style="left:40px;top:260px;width:140px;height:60px;">Màn hình Đăng nhập</div>
+    <div class="box b-blue" style="left:220px;top:115px;width:140px;height:52px;">Nhân viên Đăng nhập</div>
+    <div class="box b-gold" style="left:220px;top:285px;width:140px;height:52px;">Quản lý Đăng nhập</div>
+    <div class="box b-purple" style="left:220px;top:435px;width:140px;height:52px;">Admin Đăng nhập</div>
+    <div class="box b-gray" style="left:480px;top:280px;width:150px;height:60px;border-width:2px;">Giao diện chính</div>
+
+    <div class="box b-gray" style="left:680px;top:55px;width:130px;height:52px;">Trang chủ</div>
+    <div class="box b-gray" style="left:680px;top:155px;width:130px;height:52px;">Check-in</div>
+    <div class="box b-gray" style="left:680px;top:255px;width:130px;height:52px;">Check-out</div>
+    <div class="box b-gray" style="left:680px;top:355px;width:130px;height:52px;">Hóa đơn</div>
+    <div class="box b-gray" style="left:680px;top:475px;width:130px;height:52px;">Thống kê</div>
+
+    <div class="box b-gray" style="left:870px;top:52px;width:150px;height:52px;">Khách hàng</div>
+    <div class="box b-gold" style="left:870px;top:125px;width:150px;height:80px;">
+      Phòng
+      <small class="t-blue">NV: Xem + Cập nhật<br>trạng thái</small>
+      <small class="t-gold">QL/Admin: Thêm + sửa</small>
+    </div>
+    <div class="box b-gray" style="left:870px;top:260px;width:150px;height:60px;">Dịch vụ</div>
+    <div class="box b-gold" style="left:870px;top:410px;width:150px;height:85px;">
+      Nhân viên
+      <small class="t-gold">QL: Thêm + sửa NV</small>
+      <small class="t-purple">Admin: Thêm + sửa<br>toàn bộ</small>
+    </div>
+
+    <div class="box b-gray" style="left:1080px;top:255px;width:150px;height:50px;">Sử dụng dịch vụ</div>
+    <div class="box b-gold" style="left:1080px;top:340px;width:150px;height:60px;">
+      Bảng giá dịch vụ
+      <small class="t-blue">NV: Xem</small>
+      <small class="t-gold">QL: Thêm + sửa</small>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot" style="border-color:#94a3b8; background:#f8fafc"></span> Tất cả vai trò (Xám)</span>
+    <span><span class="dot" style="border-color:#3b82f6; background:#eff6ff"></span> Nhân viên (Xanh dương)</span>
+    <span><span class="dot" style="border-color:#f59e0b; background:#fffbeb"></span> Quản lý (Vàng)</span>
+    <span><span class="dot" style="border-color:#8b5cf6; background:#f5f3ff"></span> Admin (Tím)</span>
+    <span><svg width="34" height="10">
+        <line x1="0" y1="5" x2="34" y2="5" stroke="#f59e0b" stroke-width="2" />
+      </svg> Luồng Quản lý</span>
+    <span><svg width="34" height="10">
+        <line x1="0" y1="5" x2="34" y2="5" stroke="#8b5cf6" stroke-width="2" />
+      </svg> Luồng Admin</span>
+    <span><svg width="34" height="10">
+        <line x1="0" y1="5" x2="34" y2="5" stroke="#3b82f6" stroke-width="2" />
+      </svg> Luồng Nhân viên</span>
+  </div>
+</body>
+
+</html>
